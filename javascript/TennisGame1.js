@@ -5,6 +5,12 @@ var TennisGame1 = function(player1Name, player2Name) {
     this.player2Name = player2Name;
 };
 
+const loveAll = "Love-All";
+const fifteenAll = "Fifteen-All";
+const thirtyAll = "Thirty-All";
+const deuce = "Deuce";
+
+
 TennisGame1.prototype.wonPoint = function(playerName) {
     if (playerName === "player1")
         this.m_score1 += 1;
@@ -18,16 +24,16 @@ TennisGame1.prototype.getScore = function() {
     if (this.m_score1 === this.m_score2) {
         switch (this.m_score1) {
             case 0:
-                score = "Love-All";
+                score = loveAll;
                 break;
             case 1:
-                score = "Fifteen-All";
+                score = fifteenAll;
                 break;
             case 2:
-                score = "Thirty-All";
+                score = thirtyAll;
                 break;
             default:
-                score = "Deuce";
+                score = deuce;
                 break;
         }
     } else if (this.m_score1 >= 4 || this.m_score2 >= 4) {
